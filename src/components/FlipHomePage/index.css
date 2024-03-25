@@ -1,0 +1,22 @@
+.flip-home-page {
+  background-color: #14332e;
+  background-size: cover;
+  color: #ffffff;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+}
+.flip-image {
+  width: 40%;
+  align-self: center;
+}
+.flip-start-button {
+  width: 100px;
+  height: 39px;
+  background-color: #ffffff;
+  color: #223a5f;
+  font-family: 'Bree serif';
+  border-width: 0px;
+  border-radius: 5px;
+  margin-left: 10%;
+}
