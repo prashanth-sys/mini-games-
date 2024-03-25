@@ -4,7 +4,7 @@ import {BiArrowBack} from 'react-icons/bi'
 import './index.css'
 
 const FlipHomePage = () => (
-  <div className="flip-home-page">
+  <div className="rock-home-page">
     <div className="back-icon">
       <Link to="/" className="link">
         <button type="button" className="back-button">
@@ -15,39 +15,56 @@ const FlipHomePage = () => (
     </div>
 
     <img
-      src="https://res.cloudinary.com/dlsuy2qn2/image/upload/v1708572327/Layer_2_yiiit6.png"
-      alt="card flip memory game"
-      className="flip-image"
+      src="https://res.cloudinary.com/dlsuy2qn2/image/upload/v1708572334/Group_7469_1_i9ovya.png"
+      alt="rock paper scissor"
+      className="rock-image"
     />
     <h1 className="rules">Rules</h1>
     <ul className="rules-list-container">
+      <li>The game result should be based on user and user opponent choices</li>
       <li>
-        When the game is started, the users should be able to see the list of
-        Cards that are shuffled and turned face down.
+        When the user choice is rock and his opponent choice is rock then the
+        result will be <span className="span">IT IS DRAW</span>
       </li>
-
       <li>
-        When a user starts the game, the user should be able to see the Timer
-        running.
+        When the user choice is paper and his opponent choice is rock then the
+        result will be <span className="span">YOU WON</span>
       </li>
-
-      <li>The Timer starts from 2 Minutes.</li>
-
       <li>
-        If the two cards have the same image, they remain face up. If not, they
-        should be flipped face down again after a short 2 seconds.
+        When the user choice is a scissor and his opponent choice is rock then
+        the result will be <span className="span">YOU LOSE</span>
       </li>
-
-      <li>Users should be able to compare only two cards at a time.</li>
-
       <li>
-        When the user is not able to find all the cards before the timer ends
-        then the game should end and redirect to the Time Up Page.
+        When the user choice is paper and his opponent choice is paper then the
+        result will be <span className="span">IT IS DRAW</span>
       </li>
-
       <li>
-        If the user finds all the matching cards before the timer ends, then the
-        user should be redirected to the results page.
+        When the user choice is scissors and his opponent choice is paper then
+        the result will be <span className="span">YOU WON</span>
+      </li>
+      <li>
+        When the user choice is rock and his opponent choice is scissors then
+        the result will be <span className="span">YOU WON</span>
+      </li>
+      <li>
+        When the user choice is paper and his opponent choice is scissors then
+        the result will be <span className="span">YOU LOSE</span>
+      </li>
+      <li>
+        When the user choice is scissors and his opponent choice is scissors
+        then the result will be <span className="span">IT IS DRAW</span>
+      </li>
+      <li>
+        When the result is <span className="span">YOU WON</span>, then the count
+        of the score should be incremented by 1
+      </li>
+      <li>
+        When the result is <span className="span">IT IS DRAW</span>, then the
+        count of the score should be the same
+      </li>
+      <li>
+        When the result is <span className="span">YOU LOSE</span>, then the
+        count of the score should be decremented by 1.
       </li>
     </ul>
     <Link to="/rock/paper/scissor" className="link">

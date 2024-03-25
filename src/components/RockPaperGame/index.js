@@ -1,4 +1,7 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
+import {BiArrowBack} from 'react-icons/bi'
+
 import GamePopup from '../GamePopup'
 import './index.css'
 
@@ -27,6 +30,7 @@ class GamingComponents extends Component {
     selectedImage: null,
     opponentImage: null,
     result: null,
+    isModelOpen: false,
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -93,11 +97,45 @@ class GamingComponents extends Component {
     }
   }
 
+  toggleModel = () => {
+    this.setState(prevState => ({
+      isModelOpen: !prevState.isModelOpen,
+    }))
+  }
+
   render() {
-    const {count, isShow, selectedImage, opponentImage, result} = this.state
+    const {
+      count,
+      isShow,
+      selectedImage,
+      opponentImage,
+      result,
+      isModelOpen,
+    } = this.state
 
     return (
       <div className="bg-container">
+        <div className="game-rules-card">
+          <div>
+            <Link to="/rock/paper/scissor" className="link">
+              <button className="back-icon-button" type="button">
+                <BiArrowBack className="icon" />
+                <p className="back">Back</p>
+              </button>
+            </Link>
+          </div>
+          <div>
+            <GamePopup isOpen={isModelOpen} onClose={this.toggleModel} />
+            <button
+              type="button"
+              className="rules-button"
+              onClick={this.toggleModel}
+            >
+              Rules
+            </button>
+          </div>
+        </div>
+        <h1 className="game-page-heading">ROCK PAPER SCISSOR</h1>
         <div className="card-container">
           <div className="heading-container">
             <h1 className="game-name">
@@ -166,7 +204,6 @@ class GamingComponents extends Component {
             </div>
           )}
         </div>
-
         <div className="button-container">
           <GamePopup
             showPopup={!isShow && selectedImage !== null}

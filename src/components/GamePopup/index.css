@@ -1,35 +1,48 @@
-.popup-container {
-  background-color: #ffffff;
-  width: 1000px;
-  border-radius: 16px;
-  background-size: cover;
-  height: 100px;
-}
-.modal-container {
+/* index.css */
+
+.model-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
-.content {
-  margin-top: 12px;
-  margin-left: 48px;
-  margin-bottom: 48px;
-  margin-right: 48px;
+
+.model {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  overflow: auto;
 }
+
 .close-button {
-  align-self: flex-end;
-  background-color: transparent;
-  width: 28px;
-  height: 28px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
   border: none;
-  margin-top: 18px;
-  margin-right: 18px;
-  outline: none;
   cursor: pointer;
+  color: #334155; /* Change the color of the close button */
 }
-.close-icon {
-  font-size: 25px;
-  color: #ffffff;
+
+.rules-content {
+  text-align: left;
+}
+
+.rules-list-container {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.rules {
+  text-align: center;
+  font-family: 'Bree serif';
+  color: #334155;
 }
